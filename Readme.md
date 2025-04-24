@@ -27,7 +27,7 @@
 **估算費用：**
 -  **GPT-3.5 約 $0.02～$0.04 / 1堂課**
     
-➡️ 須前往 [https://platform.openai.com/account/billing](https://platform.openai.com/account/billing) 目前 Open AI 政策下需先儲值至少 **$5 美金** 才能讓 API 能工作。
+➡️ 須前往 [https://platform.openai.com/account/billing](https://platform.openai.com/account/billing) 目前 Open AI 政策下需先儲值至少 **$5 美金** 才能讓 API 能工作
 
 ---
 
@@ -53,7 +53,7 @@
 
 - 若想調整字體大小 在 subtitleEl.style.fontSize = '1.8rem'` 自己改
 - 建議使用 GPT-3.5 作為翻譯，**便宜又快**
-- 目前有些BUG，例如翻譯的字幕連續重複出現，字幕沒正常顯示，嘗試F5，或重啟腳本。
+- 目前有些BUG，例如翻譯的字幕連續重複出現，字幕沒正常顯示，嘗試F5，或重啟腳本
 - 字幕設定需在影片下顯示 ，如圖:
 - ![tt](https://github.com/user-attachments/assets/a91437e1-683a-418e-a5b0-0f315d502645)
 ---
