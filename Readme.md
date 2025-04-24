@@ -60,7 +60,8 @@
 
 ##  範例畫面
 
-![image](https://github.com/user-attachments/assets/eda9e051-611e-42f0-aa79-5b11119076b6)
+![image](https://github.com/user-attachments/assets/6f43e580-a1b3-41a0-9e37-b1a1d499baed)
+![image](https://github.com/user-attachments/assets/b4e5f501-d686-4de0-ae05-80ed60737766)
 
 
 ---
