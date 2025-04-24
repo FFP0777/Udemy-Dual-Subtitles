@@ -51,7 +51,7 @@
 
 ## 小提示
 
-- 若想調整字體在 subtitleEl.style.fontSize = '1.8rem'` 自己改
+- 若想調整字體大小 在 subtitleEl.style.fontSize = '1.8rem'` 自己改
 - 建議使用 GPT-3.5 作為翻譯，**便宜又快**
 - 目前有些BUG，例如翻譯的字幕連續重複出現，字幕沒正常顯示，嘗試F5，或重啟腳本。
 ---
