@@ -33,7 +33,7 @@
 
 ## 安裝
 
-1. 安裝 [Tampermonkey 擴充功能](https://www.tampermonkey.net/)
+1. 去商店安裝 [Tampermonkey 擴充功能](https://www.tampermonkey.net/)
 2. 點擊「新增腳本」後，貼上 `gpt-udemy-dual-sub.js` 腳本內容
 3. 編輯腳本，把 `const API_KEY = 'your-api-key';` 換成你自己的 GPT API 金鑰
 4. 開啟任一 Udemy 課程影片，字幕出現時即會自動翻譯成中文！
