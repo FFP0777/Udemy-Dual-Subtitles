@@ -25,7 +25,7 @@
 | GPT-4o        | 每 1K tokens   | $0.0050       | $0.0150       |
 
 **估算費用：**
--  **GPT-3.5 約 $0.03～$0.05 / 1堂課**
+-  **GPT-3.5 約 $0.02～$0.04 / 1堂課**
     
 ➡️ 須前往 [https://platform.openai.com/account/billing](https://platform.openai.com/account/billing) 目前 Open AI 政策下需先儲值至少 **$5 美金** 才能讓API Key 啟動。
 
