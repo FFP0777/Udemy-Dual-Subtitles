@@ -65,10 +65,10 @@
           subtitleEl.innerText = `${englishLine}\n${translated}`;
           console.log('翻譯完成：', translated);
         } else {
-          console.warn('⚠️翻譯失敗', data);
+          console.warn('翻譯失敗', data);
         }
       } catch (err) {
-        console.error('🚨錯誤：', err);
+        console.error('錯誤：', err);
       }
     });
 
