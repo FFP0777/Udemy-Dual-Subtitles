@@ -1,4 +1,4 @@
-# Udemy 雙字幕（GPT 中文翻譯）
+# Udemy 雙字幕（GPT翻譯）
 
 利用 Tampermonkey 用戶腳本，可自動將 Udemy 課程中的英文字幕**即時翻譯成中文**，實現「雙字幕」顯示。
 
