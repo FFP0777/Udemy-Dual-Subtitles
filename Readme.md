@@ -2,12 +2,7 @@
 
 利用 Tampermonkey 用戶腳本，可自動將 Udemy 課程中的英文字幕**即時翻譯成中文**，再以「雙字幕」顯示。
 
-
-
 https://github.com/user-attachments/assets/9990979e-d2b0-44ad-bcc6-738743dc8ecf
-
-
-
 
 ---
 
