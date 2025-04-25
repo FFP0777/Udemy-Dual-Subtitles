@@ -12,7 +12,6 @@
 - 自動偵測字幕變化並呼叫 GPT API 翻譯成任何語言
 - 可改成 gpt-4o、gpt-4-turbo、gpt-3.5-turbo、gpt-4o-mini（自由選擇）
 - 支持將 **可任意語言** 翻譯成 **任意語言** 
---
 
 
 ### GPT API 
