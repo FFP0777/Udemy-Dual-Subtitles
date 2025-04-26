@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Udemy 字幕預載字幕翻譯 + 漂浮字幕顯示
+// @name         Udemy 字幕預測翻譯 + 漂浮字幕顯示
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  抓取目前字幕與後續字幕，並即時翻譯與快取顯示中文字幕
@@ -10,12 +10,12 @@
 (function () {
   'use strict';
 
-  const API_KEY = ''; // 🔑 填入你的 API 金鑰
+  const API_KEY = 'sk-xxxxx'; // 填入你的 API 金鑰
   const MODEL = 'gpt-4o-mini';
   window.translationDict = {}; // 快取字典全域可見
   let lastText = '';
 
-  // 建立字幕框
+  // 建立字幕框（只顯示中文翻譯）
   const zhBox = document.createElement('div');
   zhBox.id = 'zhSubtitleBox';
   zhBox.style = `
@@ -24,8 +24,9 @@
     left: 50%;
     transform: translateX(-50%);
     background: rgba(0, 0, 0, 0.75);
-    color: white;
-    font-size: 20px;
+    font-family: "Microsoft JhengHei", sans-serif; /* 微軟正黑體 */
+    color: #66ccff;
+    font-size: 26px;
     padding: 10px 20px;
     border-radius: 12px;
     max-width: 80%;
@@ -43,12 +44,14 @@
   // 拖動功能
   let isDragging = false, offsetX = 0, offsetY = 0;
   zhBox.addEventListener('mousedown', e => {
-    if (e.target === zhBox && e.offsetX < zhBox.clientWidth - 20 && e.offsetY < zhBox.clientHeight - 20) {
-      isDragging = true;
-      offsetX = e.offsetX;
-      offsetY = e.offsetY;
-    }
-  });
+  const resizeThreshold = 20; // 右下角20px範圍
+  const inResizeZone = e.offsetX > zhBox.clientWidth - resizeThreshold && e.offsetY > zhBox.clientHeight - resizeThreshold;
+  if (!inResizeZone) { // 只有「不是在右下角」才啟動拖曳
+    isDragging = true;
+    offsetX = e.offsetX;
+    offsetY = e.offsetY;
+  }
+});
   document.addEventListener('mousemove', e => {
     if (isDragging) {
       zhBox.style.left = `${e.clientX - offsetX}px`;
@@ -82,7 +85,7 @@
       const data = await res.json();
       const translated = data.choices?.[0]?.message?.content?.trim() || "(翻譯失敗)";
       window.translationDict[text] = translated;
-      console.log("翻譯完成：", text);
+      console.log("📥 翻譯完成：", text);
       return translated;
     } catch (e) {
       console.error("翻譯失敗：", e);
@@ -112,17 +115,17 @@
     return texts;
   }
 
-  // 主迴圈：每 300ms 檢查並翻譯
+  // 主迴圈：每 500ms 檢查並翻譯
   setInterval(async () => {
     const [currentText, ...nextTexts] = getTranscriptBlockTexts(6);
     if (!currentText || currentText === lastText) return;
     lastText = currentText;
 
-    console.log("當前字幕內容：", currentText);
+    console.log("✅ 當前字幕內容：", currentText);
     const translated = await translate(currentText);
 
     // 顯示翻譯字幕在漂浮字幕框中
-    zhBox.innerHTML = `<div style="font-size:22px; color:#fff;">${translated}</div>`;
+    zhBox.innerHTML = `<div style="font-size:30px; color:#66ccff;">${translated}</div>`;
 
     for (const text of nextTexts) {
       if (text && !window.translationDict[text]) {
@@ -130,5 +133,5 @@
         translate(text);
       }
     }
-  }, 300);
+  }, 50);
 })();
