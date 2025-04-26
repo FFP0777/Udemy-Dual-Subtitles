@@ -33,7 +33,7 @@ https://github.com/user-attachments/assets/692cf372-aee2-4c55-bb42-33d70626709a
 
 ## 限制
 
-- 若 API 速率限制或金額不足，將無法使用
+- 若使用的 API 受限制或金額不足，將無法使用
 
 ---
 
